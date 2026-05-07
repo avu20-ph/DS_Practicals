@@ -10,6 +10,8 @@
 #How should the business use the metric to monitor the business problem
 #Can you estimate initial value(s) for the metric based on the current data
 #Final summary including recommendations that the business should undertake
+#install.packages(c("rlang", "cli", "dplyr", "purrr"), type = "binary")
+#install.packages("tidymodels")
 
 #KPI - achieve at least 80% prediction accuracy
 #This is a binary classification problem since the outcome is categorical and only has two possible classes:
@@ -18,6 +20,7 @@
 #KPI - achieve at least 80% prediction accuracy
 #This is a binary classification problem since the outcome is categorical and only has two possible classes: high traffic and not high traffic.
 #Importing packages
+library(here)
 library(tidymodels)
 library(dplyr)
 library(ggplot2)
@@ -26,7 +29,7 @@ library(tidyverse)
 library(xgboost)
 library(ranger)
 #Reading csv file and converting it into a dataframe, checking first 6 rows, and checking # rows in dataset
-recipes <- read.csv("recipe_site_traffic_2212.csv")
+recipes <- read.csv(here("Data", "recipe_site_traffic_2212.csv"))
 head(recipes)
 nrow(recipes)
 
